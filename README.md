@@ -79,8 +79,8 @@ Players load only when a visitor clicks **Load Spotify player**, so the site mak
 
 ## Contact form (Web3Forms)
 
-1. Get a free access key at <https://web3forms.com> using **management@ljprecords.ca**. Submissions are emailed there.
-2. In `contact.html`, replace `PASTE_KEY_HERE` in `<input type="hidden" name="access_key" …>` with your key. Until you do, the form shows a message asking visitors to email you instead.
+1. The access key is in `contact.html` (`<input type="hidden" name="access_key" …>`). Web3Forms keys are meant to be public, so it's safe in the page. Submissions go to the email address the key was created with (it should be **management@ljprecords.ca**).
+2. To change the key, create a new one at <https://web3forms.com> and replace the value.
 3. Test it once from the live site.
 
 How it works:
