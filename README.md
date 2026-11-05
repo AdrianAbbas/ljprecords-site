@@ -27,14 +27,14 @@ Search for `CONFIRM:` to find every statement I've flagged for you to check. Del
 ## Adding artist photos
 
 1. Upload a square or landscape photo to `assets/photos/`, for example `jasy.jpg` or `hollowsound.jpg`. Keep it under about 300 KB, around 1200 px wide.
-2. In `index.html`, find the `<div class="artist-photo placeholder" ...>` block for that artist. The exact `<img>` line to paste in its place is in the comment directly above it.
+2. In `index.html`, find that artist's `<img class="artist-photo" ...>` and change its `src` to your new file. For a photo, remove the `logo` class so the image fills the frame.
 3. Keep the `alt` text descriptive, for example `alt="Jasy performing on stage"`.
 
 ## Spotify players
 
 Each artist card has `data-spotify-artist="..."`, which holds the artist's 22-character Spotify ID.
 To find it in Spotify, open the artist page and choose **Share → Copy link to artist**. The ID is the part after `/artist/`.
-If the ID is empty, the player is hidden. **Hollowsound's ID still needs to be filled in.** Also replace their Spotify search link with the artist link.
+If the ID is empty, the player is hidden. **Both artists' IDs are set.**
 
 Players load only when a visitor clicks **Load Spotify player**. Until then, the site makes no requests to Spotify. That keeps the privacy notice accurate ("no cookies, no tracking").
 
@@ -46,7 +46,7 @@ Copy one whole `<article class="artist-card">…</article>` block inside `.artis
 
 - **No Google Fonts or external requests.** Headings use the Bodoni and Didot system fonts, which are close to the logo's typeface, with serif fallbacks. Body text uses the system sans-serif. Loading Google Fonts sends visitors' IP addresses to Google, which would contradict a "no tracking" privacy notice.
 - **Click-to-load Spotify embeds** use Spotify's official `open.spotify.com/embed/artist/…` player, for the same privacy reason.
-- **No artist photos or artwork are copied or hotlinked.** The cards show monogram placeholders until you add photos.
+- **Artist images:** the cards show each artist's logo, supplied by you (`assets/photos/jasy-logo.png`, `assets/photos/hollowsound-logo.jpg`). Nothing is hotlinked.
 - **Logo:** the supplied logo was converted to a transparent gold PNG (`logo.png`) so it sits cleanly on the dark background. The favicon uses the LJP monogram only, because the full logo is unreadable at 16–32 px.
 - **Label social links** aren't known, so the footer links to the artists' Instagram pages. Add the label's own accounts when you have them.
 - **Structured data:** `index.html` includes schema.org `Organization` data (legal name, email, city) to help search engines and verifiers identify the business.

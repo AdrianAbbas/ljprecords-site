@@ -116,11 +116,9 @@
         <div class="artist-grid">
           <!-- ---------- JASY ---------- -->
           <article class="artist-card" aria-labelledby="jasy-name">
-            <!-- Photo: add assets/photos/jasy.jpg, then replace this <div class="artist-photo ..."> with:
-                 <img class="artist-photo" src="/assets/photos/jasy.jpg" alt="Jasy" width="800" height="800" loading="lazy"> -->
-            <div class="artist-photo placeholder" role="img" aria-label="Photo of Jasy coming soon">
-              <span aria-hidden="true">J</span>
-            </div>
+            <!-- Photo: to use a photo instead of the logo, add assets/photos/jasy.jpg and change src below (remove the "logo" class for a full-bleed photo). -->
+            <img class="artist-photo logo" src="/assets/photos/jasy-logo.png" width="900" height="854" loading="lazy"
+                 alt="Jasy logo: a gold handwritten Jasy signature with a heart">
             <div class="artist-body">
               <h3 id="jasy-name">Jasy</h3>
               <p class="artist-meta">R&amp;B / Soul · Mississauga, Ontario</p>
@@ -147,11 +145,9 @@
 
           <!-- ---------- HOLLOWSOUND ---------- -->
           <article class="artist-card" aria-labelledby="hollowsound-name">
-            <!-- Photo: add assets/photos/hollowsound.jpg, then replace this placeholder <div> with:
-                 <img class="artist-photo" src="/assets/photos/hollowsound.jpg" alt="Hollowsound" width="800" height="800" loading="lazy"> -->
-            <div class="artist-photo placeholder" role="img" aria-label="Photo of Hollowsound coming soon">
-              <span aria-hidden="true">H</span>
-            </div>
+            <!-- Photo: to use a photo instead of the logo, add assets/photos/hollowsound.jpg and change src below. -->
+            <img class="artist-photo" src="/assets/photos/hollowsound-logo.jpg" width="1200" height="749" loading="lazy"
+                 alt="Hollowsound logo: the word Hollow in grey and Sound in purple, set against a purple and grey sound waveform">
             <div class="artist-body">
               <h3 id="hollowsound-name">Hollowsound</h3>
               <p class="artist-meta">Alternative rock · Toronto, Ontario</p>
@@ -164,12 +160,10 @@
               </p>
               <ul class="link-list" aria-label="Hollowsound online">
                 <li><a href="https://hollow-sound.com/" rel="noopener" target="_blank">Official site<span class="visually-hidden"> (opens in a new tab)</span></a></li>
-                <!-- CONFIRM: Hollowsound Spotify link. I couldn't verify the artist ID, so this is a Spotify search link. Replace it with https://open.spotify.com/artist/YOUR_ID -->
-                <li><a href="https://open.spotify.com/search/Hollowsound/artists" rel="noopener" target="_blank">Spotify<span class="visually-hidden"> (opens in a new tab)</span></a></li>
+                <li><a href="https://open.spotify.com/artist/32NcEduA1WUu1zl0mmGaZf" rel="noopener" target="_blank">Spotify<span class="visually-hidden"> (opens in a new tab)</span></a></li>
                 <li><a href="https://www.instagram.com/hollowsoundband/" rel="noopener" target="_blank">Instagram<span class="visually-hidden"> (opens in a new tab)</span></a></li>
               </ul>
-              <!-- CONFIRM: Hollowsound Spotify embed. Put the band's Spotify artist ID in data-spotify-artist below (from Spotify: Share → Copy link to artist, the part after /artist/). The player stays hidden until an ID is set. -->
-              <div class="spotify-embed" data-spotify-artist="" data-title="Hollowsound on Spotify">
+              <div class="spotify-embed" data-spotify-artist="32NcEduA1WUu1zl0mmGaZf" data-title="Hollowsound on Spotify">
                 <button type="button" class="btn btn-ghost btn-small spotify-load">
                   ▶ Load Spotify player <span class="visually-hidden">for Hollowsound</span>
                 </button>

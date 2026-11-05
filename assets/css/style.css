@@ -177,3 +177,10 @@ p { margin: 0 0 1.1em; }
 .prose h1 { font-size: clamp(2.2rem, 5vw, 3rem); }
 .prose h2 { font-size: 1.5rem; margin-top: 2rem; color: var(--gold); }
 .prose ul { padding-left: 1.2rem; }
+
+/* Artist logo shown in the photo slot */
+.artist-photo { border-bottom: 1px solid var(--line); background: #0d0d0d; }
+.artist-photo.logo {
+  object-fit: contain; padding: 1.5rem 2rem;
+  background: radial-gradient(ellipse at 50% 50%, rgba(190, 169, 126, .08), transparent 70%), #0d0d0d;
+}
