@@ -4,15 +4,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>LJP Records Inc. | Independent Record Label, Mississauga, Ontario</title>
-  <meta name="description" content="LJP Records Inc. is an independent record label and music company based in Mississauga, Ontario, Canada. We work with artists, producers and composers on releases, artist development, production, and composing for artists and media.">
+  <meta name="description" content="LJP Records Inc. is an independent record label and music company based in Mississauga, Ontario, Canada, working with artists, producers and composers on releases, artist development, production and composing.">
+  <!-- BEGIN:head -->
   <meta name="theme-color" content="#0a0a0a">
   <link rel="canonical" href="https://ljprecords.ca/">
-
-  <!-- Open Graph / social sharing -->
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="LJP Records">
-  <meta property="og:title" content="LJP Records Inc. | Independent Record Label">
-  <meta property="og:description" content="An independent record label and music company based in Mississauga, Ontario, Canada.">
+  <meta property="og:title" content="LJP Records Inc. | Independent Record Label, Mississauga, Ontario">
+  <meta property="og:description" content="LJP Records Inc. is an independent record label and music company based in Mississauga, Ontario, Canada, working with artists, producers and composers on releases, artist development, production and composing.">
   <meta property="og:url" content="https://ljprecords.ca/">
   <meta property="og:image" content="https://ljprecords.ca/assets/img/og-image.jpg">
   <meta property="og:image:width" content="1200">
@@ -20,235 +19,203 @@
   <meta property="og:image:alt" content="LJP Records logo: gold LJP monogram in a square frame on black">
   <meta property="og:locale" content="en_CA">
   <meta name="twitter:card" content="summary_large_image">
-
-  <link rel="icon" href="/favicon.ico" sizes="any">
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/icon-32.png">
-  <link rel="apple-touch-icon" href="/assets/img/icon-180.png">
-  <link rel="manifest" href="/site.webmanifest">
-  <link rel="stylesheet" href="/assets/css/style.css">
-
-  <!-- Structured data: identifies the legal business behind this site -->
+  <link rel="icon" href="./favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/img/icon-32.png">
+  <link rel="apple-touch-icon" href="./assets/img/icon-180.png">
+  <link rel="manifest" href="./site.webmanifest">
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <script>document.documentElement.classList.add('js');</script>
+  <!-- END:head -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "LJP Records Inc.",
-    "alternateName": "LJP Records",
-    "url": "https://ljprecords.ca/",
-    "logo": "https://ljprecords.ca/assets/img/icon-512.png",
-    "email": "management@ljprecords.ca",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Mississauga",
-      "addressRegion": "ON",
-      "addressCountry": "CA"
-    },
-    "department": {
-      "@type": "Organization",
-      "name": "Elsewhere Audio",
-      "description": "Audio software division of LJP Records Inc."
-    }
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://ljprecords.ca/#organization",
+        "name": "LJP Records",
+        "legalName": "LJP Records Inc.",
+        "url": "https://ljprecords.ca/",
+        "logo": "https://ljprecords.ca/assets/img/icon-512.png",
+        "email": "management@ljprecords.ca",
+        "description": "Independent record label and music company based in Mississauga, Ontario, Canada.",
+        "address": { "@type": "PostalAddress", "addressLocality": "Mississauga", "addressRegion": "ON", "addressCountry": "CA" },
+        "identifier": { "@type": "PropertyValue", "propertyID": "Ontario Corporation Number", "value": "1001399729" },
+        "contactPoint": { "@type": "ContactPoint", "contactType": "customer service", "email": "management@ljprecords.ca", "url": "https://ljprecords.ca/contact.html", "areaServed": "CA" },
+        "subOrganization": { "@type": "Organization", "@id": "https://ljprecords.ca/elsewhere-audio.html#organization", "name": "Elsewhere Audio", "description": "Audio software division of LJP Records Inc.", "url": "https://ljprecords.ca/elsewhere-audio.html" }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://ljprecords.ca/#website",
+        "url": "https://ljprecords.ca/",
+        "name": "LJP Records",
+        "publisher": { "@id": "https://ljprecords.ca/#organization" },
+        "inLanguage": "en-CA"
+      }
+    ]
   }
   </script>
 </head>
-<body>
+<body data-page="home">
+  <!-- BEGIN:header -->
   <a class="skip-link" href="#main">Skip to content</a>
-
   <header class="site-header">
     <nav class="nav container" aria-label="Main">
-      <a class="nav-brand" href="#top" aria-label="LJP Records, back to top">
-        <img src="/assets/img/mark.png" alt="" width="28" height="32">
+      <a class="nav-brand" href="./" aria-label="LJP Records home">
+        <img src="./assets/img/mark.png" alt="" width="28" height="32">
         <span>LJP Records</span>
       </a>
-      <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#artists">Artists</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#elsewhere-audio">Elsewhere Audio</a></li>
-        <li><a href="#contact">Contact</a></li>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links">
+        <span class="nav-toggle-bars" aria-hidden="true"></span>
+        <span class="visually-hidden">Menu</span>
+      </button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="./" aria-current="page">Home</a></li>
+        <li><a href="./artists.html">Artists</a></li>
+        <li><a href="./services.html">Services</a></li>
+        <li><a href="./elsewhere-audio.html">Elsewhere Audio</a></li>
+        <li><a href="./about.html">About</a></li>
+        <li><a href="./contact.html" class="nav-cta">Contact</a></li>
       </ul>
     </nav>
   </header>
+  <!-- END:header -->
 
   <main id="main">
     <!-- ============ HERO ============ -->
-    <section class="hero" id="top">
+    <section class="hero">
       <div class="container hero-inner">
         <h1 class="visually-hidden">LJP Records</h1>
-        <img class="hero-logo" src="/assets/img/logo.png" width="900" height="999"
+        <img class="hero-logo" src="assets/img/logo.png" width="900" height="999"
              alt="LJP Records logo: a gold LJP monogram inside a square frame, with the word Records beneath">
         <p class="hero-tagline">An independent record label and music company based in Mississauga, Ontario.</p>
         <div class="hero-actions">
-          <a class="btn btn-gold" href="#artists">Our artists</a>
-          <a class="btn btn-ghost" href="#contact">Get in touch</a>
+          <a class="btn btn-gold" href="artists.html">Our artists</a>
+          <a class="btn btn-ghost" href="contact.html">Work with us</a>
         </div>
       </div>
     </section>
 
-    <!-- ============ ABOUT ============ -->
-    <section class="section" id="about" aria-labelledby="about-title">
+    <!-- ============ INTRO ============ -->
+    <section class="section">
       <div class="container narrow">
-        <p class="eyebrow">About</p>
-        <h2 id="about-title">Music made with intent.</h2>
+        <p class="eyebrow">LJP Records Inc.</p>
+        <h2>Music made with intent.</h2>
         <p class="lead">
-          LJP Records Inc. is an independent record label and music company based in Mississauga, Ontario.
-          We work closely with artists, producers and composers to make records that sound like the people who made them.
+          We're an independent label working with artists, producers and composers. We release music, develop artists,
+          produce records, and compose for artists and for media, including film and games.
         </p>
-        <p>
-          Our work covers the full life of a song: writing and composing, production, artist development, and release.
-          Beyond records, we compose original music for media, including film, games and other visual projects.
-          <!-- CONFIRM: Media composing. Confirm the media types you want to list (film, games, TV, advertising?) and whether to mention any past credits. -->
-        </p>
-        <p>
-          We stay independent on purpose. Our roster is small, the collaboration is hands-on, and every release gets the attention it deserves.
-          <!-- CONFIRM: "Small, hands-on roster" positioning. Edit this if it doesn't match how you describe the label. -->
-        </p>
-        <!-- CONFIRM: Founding year. Add "Founded in 20XX" here if you'd like it shown. -->
+        <p><a class="text-link" href="about.html">About the label <span aria-hidden="true">→</span></a></p>
       </div>
     </section>
 
-    <!-- ============ ARTISTS ============ -->
-    <section class="section section-alt" id="artists" aria-labelledby="artists-title">
+    <!-- ============ FEATURED ARTISTS ============ -->
+    <section class="section section-alt" aria-labelledby="featured-title">
       <div class="container">
         <p class="eyebrow">Artists</p>
-        <h2 id="artists-title">Our roster</h2>
-
-        <div class="artist-grid">
-          <!-- ---------- JASY ---------- -->
-          <article class="artist-card" aria-labelledby="jasy-name">
-            <!-- Photo: to use a photo instead of the logo, add assets/photos/jasy.jpg and change src below (remove the "logo" class for a full-bleed photo). -->
-            <img class="artist-photo logo" src="/assets/photos/jasy-logo.png" width="900" height="854" loading="lazy"
-                 alt="Jasy logo: a gold handwritten Jasy signature with a heart">
-            <div class="artist-body">
-              <h3 id="jasy-name">Jasy</h3>
-              <p class="artist-meta">R&amp;B / Soul · Mississauga, Ontario</p>
-              <p>
-                Jasy is a singer, songwriter and composer from Mississauga, Ontario, known for soulful vocals, introspective lyrics and a bilingual touch.
-                Her early singles include “CRIMINAL” (2021), sung in French and English, and “BELLADONNA.”
-                Her first release with LJP Records, “no idea, honestly,” arrived in October 2025, followed by the 2026 singles “Charge it up” and “Away.”
-                <!-- CONFIRM: Jasy bio. Written from public sources (Apple Music, Modern Mississauga, Sauga Arts HUB, The Music Is My Radar, Deezer). Check release names and dates. Optional fact to add: press reports a 2022 win in a Mississauga youth singing competition, but sources disagree on which one (Mississauga Arts Council Next Gen vs. Sauga Teen's Got Talent), so it is left out. -->
-              </p>
-              <ul class="link-list" aria-label="Jasy online">
-                <li><a href="https://open.spotify.com/artist/3WVA0IDSVmQrOQ1MvbMLsJ" rel="noopener" target="_blank">Spotify<span class="visually-hidden"> (opens in a new tab)</span></a></li>
-                <li><a href="https://music.apple.com/ca/artist/jasy/1514480467" rel="noopener" target="_blank">Apple Music<span class="visually-hidden"> (opens in a new tab)</span></a></li>
-                <li><a href="https://www.instagram.com/jasylarumana/" rel="noopener" target="_blank">Instagram<span class="visually-hidden"> (opens in a new tab)</span></a></li>
-                <li><a href="https://www.youtube.com/channel/UC7Lcz74NilrVgo-Rp2wNFMw" rel="noopener" target="_blank">YouTube<span class="visually-hidden"> (opens in a new tab)</span></a></li>
-              </ul>
-              <div class="spotify-embed" data-spotify-artist="3WVA0IDSVmQrOQ1MvbMLsJ" data-title="Jasy on Spotify">
-                <button type="button" class="btn btn-ghost btn-small spotify-load">
-                  ▶ Load Spotify player <span class="visually-hidden">for Jasy</span>
-                </button>
-                <p class="embed-note">This loads Spotify's player, and Spotify's privacy policy applies to it.</p>
-              </div>
-            </div>
-          </article>
-
-          <!-- ---------- HOLLOWSOUND ---------- -->
-          <article class="artist-card" aria-labelledby="hollowsound-name">
-            <!-- Photo: to use a photo instead of the logo, add assets/photos/hollowsound.jpg and change src below. -->
-            <img class="artist-photo" src="/assets/photos/hollowsound-logo.jpg" width="1200" height="749" loading="lazy"
-                 alt="Hollowsound logo: the word Hollow in grey and Sound in purple, set against a purple and grey sound waveform">
-            <div class="artist-body">
-              <h3 id="hollowsound-name">Hollowsound</h3>
-              <p class="artist-meta">Alternative rock · Toronto, Ontario</p>
-              <p>
-                Hollowsound is a Toronto-based alternative rock band blending grunge, shoegaze and hard rock.
-                Their songs deal with isolation and nostalgia, built on loud guitars and atmospheric textures.
-                The band is Adrian Abbas (vocals, guitar), Jonathan Connors (bass), Matthew De Matas-Villagomez (guitar) and Daniel Markusson (drums).
-                Their debut single, “Melancholia,” is out now.
-                <!-- CONFIRM: Hollowsound bio. Based on the band's Spotify profile bio and hollow-sound.com. Check the member list and confirm the release year of "Melancholia" (the site lists 2026). -->
-              </p>
-              <ul class="link-list" aria-label="Hollowsound online">
-                <li><a href="https://hollow-sound.com/" rel="noopener" target="_blank">Official site<span class="visually-hidden"> (opens in a new tab)</span></a></li>
-                <li><a href="https://open.spotify.com/artist/32NcEduA1WUu1zl0mmGaZf" rel="noopener" target="_blank">Spotify<span class="visually-hidden"> (opens in a new tab)</span></a></li>
-                <li><a href="https://www.instagram.com/hollowsoundband/" rel="noopener" target="_blank">Instagram<span class="visually-hidden"> (opens in a new tab)</span></a></li>
-              </ul>
-              <div class="spotify-embed" data-spotify-artist="32NcEduA1WUu1zl0mmGaZf" data-title="Hollowsound on Spotify">
-                <button type="button" class="btn btn-ghost btn-small spotify-load">
-                  ▶ Load Spotify player <span class="visually-hidden">for Hollowsound</span>
-                </button>
-                <p class="embed-note">This loads Spotify's player, and Spotify's privacy policy applies to it.</p>
-              </div>
-            </div>
-          </article>
+        <h2 id="featured-title">Featured artists</h2>
+        <div class="feature-grid">
+          <a class="feature-card" href="artists/jasy.html">
+            <img class="feature-img logo" src="assets/photos/jasy-logo.png" width="900" height="854" loading="lazy" alt="">
+            <span class="feature-body">
+              <span class="feature-title">Jasy</span>
+              <span class="feature-meta">R&amp;B / Soul · Mississauga</span>
+            </span>
+          </a>
+          <a class="feature-card" href="artists/hollowsound.html">
+            <img class="feature-img" src="assets/photos/hollowsound-logo.jpg" width="1200" height="749" loading="lazy" alt="">
+            <span class="feature-body">
+              <span class="feature-title">Hollowsound</span>
+              <span class="feature-meta">Alternative rock · Toronto</span>
+            </span>
+          </a>
         </div>
+        <p class="section-more"><a class="text-link" href="artists.html">See the full roster <span aria-hidden="true">→</span></a></p>
       </div>
     </section>
 
-    <!-- ============ SERVICES ============ -->
-    <section class="section" id="services" aria-labelledby="services-title">
+    <!-- ============ WHAT WE DO ============ -->
+    <section class="section" aria-labelledby="whatwedo-title">
       <div class="container">
         <p class="eyebrow">Services</p>
-        <h2 id="services-title">What we do</h2>
-        <p class="section-intro">We work with artists, producers and composers at every stage, from first idea to finished release.</p>
-        <!-- CONFIRM: Services list. These are written in general terms. Add, remove or reword to match what you actually offer. -->
+        <h2 id="whatwedo-title">What we do</h2>
         <div class="service-grid">
-          <div class="service">
-            <h3>Music production</h3>
-            <p>Production, arrangement and recording that serve the song and the artist's identity.</p>
-          </div>
-          <div class="service">
-            <h3>Composing</h3>
-            <p>Original songs for artists, and score for film, games and other media.</p>
-          </div>
-          <div class="service">
-            <h3>Collaboration &amp; co-writing</h3>
-            <p>Sessions with artists, writers and producers to shape ideas into finished songs.</p>
-          </div>
-          <div class="service">
-            <h3>Artist development</h3>
-            <p>Long-term support for an artist's sound, catalogue and direction.</p>
-          </div>
-          <div class="service">
-            <h3>Releases &amp; distribution</h3>
-            <p>Planning and delivering releases to streaming platforms and stores worldwide.</p>
-            <!-- CONFIRM: "worldwide" distribution. Confirm this matches your distribution setup. -->
-          </div>
+          <div class="service"><h3>Music production</h3><p>Production, arrangement and recording that serve the song.</p></div>
+          <div class="service"><h3>Composing</h3><p>Songs for artists, and score for film, games and other media.</p></div>
+          <div class="service"><h3>Artist development &amp; releases</h3><p>Long-term support from first demo to release day.</p></div>
         </div>
+        <p class="section-more"><a class="text-link" href="services.html">All services <span aria-hidden="true">→</span></a></p>
       </div>
     </section>
 
-    <!-- ============ ELSEWHERE AUDIO ============ -->
-    <section class="section section-alt" id="elsewhere-audio" aria-labelledby="ea-title">
+    <!-- ============ ELSEWHERE AUDIO TEASER ============ -->
+    <section class="section section-alt" aria-labelledby="ea-title">
       <div class="container narrow center">
         <p class="eyebrow">Coming soon</p>
         <h2 id="ea-title">Elsewhere Audio</h2>
-        <p class="lead">
-          Elsewhere Audio, a division of LJP Records Inc., is our audio software line: virtual instruments and effects for musicians, producers and composers.
-        </p>
-        <p class="muted">More details soon.</p>
+        <p class="lead">Our audio software line: virtual instruments and effects for musicians, producers and composers.</p>
+        <p><a class="btn btn-ghost" href="elsewhere-audio.html">Learn more</a></p>
       </div>
     </section>
 
-    <!-- ============ CONTACT ============ -->
-    <section class="section" id="contact" aria-labelledby="contact-title">
+    <!-- ============ WORK WITH US CTA ============ -->
+    <section class="section cta" aria-labelledby="cta-title">
       <div class="container narrow center">
-        <p class="eyebrow">Contact</p>
-        <h2 id="contact-title">Get in touch</h2>
-        <p>Artists, collaborators, media and business enquiries:</p>
-        <p class="contact-email"><a href="mailto:management@ljprecords.ca">management@ljprecords.ca</a></p>
-        <address class="contact-address">
-          LJP Records Inc.<br>
-          Mississauga, Ontario, Canada
-        </address>
+        <p class="eyebrow">Work with us</p>
+        <h2 id="cta-title">Artist, producer or composer?</h2>
+        <p class="lead">Send us your music or tell us about your project. We read every message.</p>
+        <!-- CONFIRM: "We read every message." Keep this only if it's a promise you can keep. -->
+        <p><a class="btn btn-gold" href="contact.html">Get in touch</a></p>
       </div>
     </section>
   </main>
 
+  <!-- BEGIN:footer -->
   <footer class="site-footer">
-    <div class="container footer-inner">
-      <img src="/assets/img/mark.png" alt="" width="28" height="32" class="footer-mark">
-      <p class="legal">© 2026 LJP Records Inc. · Ontario Corporation Number 1001399729 · Mississauga, Ontario, Canada</p>
-      <!-- CONFIRM: Label social links. LJP Records' own social accounts aren't known, so the footer links to the artists. Add the label's Instagram etc. here if you have them. -->
-      <ul class="footer-links" aria-label="Footer">
-        <li><a href="/privacy.html">Privacy</a></li>
-        <li><a href="mailto:management@ljprecords.ca">Email</a></li>
-        <li><a href="https://www.instagram.com/jasylarumana/" rel="noopener" target="_blank">Jasy on Instagram<span class="visually-hidden"> (opens in a new tab)</span></a></li>
-        <li><a href="https://www.instagram.com/hollowsoundband/" rel="noopener" target="_blank">Hollowsound on Instagram<span class="visually-hidden"> (opens in a new tab)</span></a></li>
-      </ul>
+    <div class="container footer-grid">
+      <div class="footer-col footer-company">
+        <a class="nav-brand" href="./" aria-label="LJP Records home">
+          <img src="./assets/img/mark.png" alt="" width="28" height="32">
+          <span>LJP Records</span>
+        </a>
+        <p>
+          LJP Records Inc.<br>
+          Ontario Corporation Number 1001399729<br>
+          Mississauga, Ontario, Canada<br>
+          <a href="mailto:management@ljprecords.ca">management@ljprecords.ca</a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <h2 class="footer-heading">Explore</h2>
+        <ul>
+          <li><a href="./artists.html">Artists</a></li>
+          <li><a href="./services.html">Services</a></li>
+          <li><a href="./elsewhere-audio.html">Elsewhere Audio</a></li>
+          <li><a href="./about.html">About</a></li>
+          <li><a href="./contact.html">Work with us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h2 class="footer-heading">Legal</h2>
+        <ul>
+          <li><a href="./privacy.html">Privacy</a></li>
+          <li><a href="./terms.html">Terms of Use</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h2 class="footer-heading">Follow</h2>
+        <!-- CONFIRM: Label social links. LJP Records' own accounts aren't known, so these link to the artists. Add the label's Instagram etc. in partials/footer.html, then run the sync script. -->
+        <ul>
+          <li><a href="https://www.instagram.com/jasylarumana/" rel="noopener" target="_blank">Jasy on Instagram<span class="visually-hidden"> (opens in a new tab)</span></a></li>
+          <li><a href="https://www.instagram.com/hollowsoundband/" rel="noopener" target="_blank">Hollowsound on Instagram<span class="visually-hidden"> (opens in a new tab)</span></a></li>
+          <li><a href="https://open.spotify.com/artist/3WVA0IDSVmQrOQ1MvbMLsJ" rel="noopener" target="_blank">Jasy on Spotify<span class="visually-hidden"> (opens in a new tab)</span></a></li>
+          <li><a href="https://open.spotify.com/artist/32NcEduA1WUu1zl0mmGaZf" rel="noopener" target="_blank">Hollowsound on Spotify<span class="visually-hidden"> (opens in a new tab)</span></a></li>
+        </ul>
+      </div>
     </div>
+    <p class="container legal">© 2026 LJP Records Inc. · Ontario Corporation Number 1001399729 · Mississauga, Ontario, Canada</p>
   </footer>
-
-  <script src="/assets/js/main.js" defer></script>
+  <script src="./assets/js/main.js" defer></script>
+  <!-- END:footer -->
 </body>
 </html>

@@ -1,56 +1,101 @@
 # ljprecords.ca
 
 The official website of **LJP Records Inc.** (Ontario Corporation Number 1001399729), Mississauga, Ontario, Canada.
-It's plain HTML and CSS, hosted free on GitHub Pages. There's no build step and no framework.
+It's plain HTML and CSS, hosted free on GitHub Pages, with no framework and no build step. GitHub serves the files exactly as they're committed.
 
-## Files
+## Pages
+
+| File | Page |
+|---|---|
+| `index.html` | Home: hero, intro, featured artists, what we do, Elsewhere Audio teaser, "Work with us" call to action |
+| `artists.html` | Roster overview (one card per artist) |
+| `artists/jasy.html`, `artists/hollowsound.html` | Artist pages: bio, links, Spotify player, photos |
+| `services.html` | Services |
+| `elsewhere-audio.html` | Elsewhere Audio (coming soon) |
+| `about.html` | About the label, our approach, company details |
+| `contact.html` | "Work with us" contact form (Web3Forms) |
+| `privacy.html`, `terms.html` | Privacy Policy and Terms of Use |
+| `404.html` | "Page not found" (GitHub Pages uses it automatically) |
+
+Other files:
 
 | File | What it is |
 |---|---|
-| `index.html` | The main page: Hero, About, Artists, Services, Elsewhere Audio, Contact, Footer |
-| `privacy.html` | The privacy notice |
+| `partials/head.html`, `partials/header.html`, `partials/footer.html` | **Shared** `<head>` tags, header/navigation and footer used by every page |
+| `tools/sync.py` | Copies the partials into every page and rebuilds `sitemap.xml` |
 | `assets/css/style.css` | All styles. Colours are at the top (`--gold: #bea97e`, `--black`). |
-| `assets/js/main.js` | A small script that loads Spotify players when a visitor clicks |
-| `assets/img/` | Logo, monogram, favicons and the social-share image, all made from the official logo |
-| `assets/photos/` | Put artist photos here |
+| `assets/js/main.js` | Mobile menu, click-to-load Spotify players, and contact-form sending. The site still works without it. |
+| `assets/img/` | Logo, monogram, favicons and the social-share image |
+| `assets/photos/` | Artist logos and photos |
+| `sitemap.xml`, `robots.txt` | For search engines |
 | `CNAME` | The custom domain (`ljprecords.ca`). Don't edit it. |
 | `.nojekyll` | Tells GitHub Pages to serve the files as-is |
 
-## Editing text
+## Editing a page's text
 
-1. Open `index.html` (on GitHub, click the file, then the pencil icon).
-2. Each section is marked with a comment such as `<!-- ============ ABOUT ============ -->`.
-3. Change the text between the tags, then commit. The live site updates within about a minute.
+1. Open the page's `.html` file (on GitHub, click the file, then the pencil icon).
+2. Edit the text inside `<main> … </main>`. **Don't edit anything between `<!-- BEGIN:… -->` and `<!-- END:… -->`**, because the sync script overwrites it.
+3. To change a page's browser-tab title or search/social description, edit its `<title>` and `<meta name="description">` near the top. Then run the sync script (below) so the Open Graph tags match.
+4. Commit. The live site updates within about a minute.
 
-Search for `CONFIRM:` to find every statement I've flagged for you to check. Delete each comment once you've reviewed it.
+Search for `CONFIRM:` to find every statement flagged for you to check. Delete each comment once you've reviewed it.
 
-## Adding artist photos
+## Editing the header, navigation or footer (every page at once)
 
-1. Upload a square or landscape photo to `assets/photos/`, for example `jasy.jpg` or `hollowsound.jpg`. Keep it under about 300 KB, around 1200 px wide.
-2. In `index.html`, find that artist's `<img class="artist-photo" ...>` and change its `src` to your new file. For a photo, remove the `logo` class so the image fills the frame.
-3. Keep the `alt` text descriptive, for example `alt="Jasy performing on stage"`.
+1. Edit `partials/header.html` or `partials/footer.html`, or `partials/head.html` for shared `<head>` tags.
+   - Use `{{root}}` at the start of internal links. The script turns it into `./`, `../` or `/` to suit each page.
+   - The nav highlights the current page using the `{{current:…}}` markers together with each page's `<body data-page="…">`.
+2. From the repo root, run:
+
+   ```bash
+   python3 tools/sync.py
+   ```
+
+   This needs only Python 3, which comes with macOS and most Linux systems; there's nothing to install. It updates every page and `sitemap.xml`.
+3. Commit all the changed files.
+
+If you can't run Python, you can edit the same block in every page by hand. Just keep the pages consistent.
+
+## Adding an artist page
+
+1. Copy `artists/jasy.html` to `artists/<name>.html`, for example `artists/new-artist.html`.
+2. In the new file, change the `<title>`, `<meta name="description">`, the JSON-LD block (name, url, genre, sameAs links), the breadcrumb name, `<h1>`, bio, links, image, and `data-spotify-artist` (see below).
+3. In `artists.html`, copy one `<article class="artist-card">…</article>` block, update it, and point its button to `artists/<name>.html`.
+4. Optional: add them to "Featured artists" in `index.html` (copy one `<a class="feature-card">` block).
+5. Run `python3 tools/sync.py` so the new page gets the shared header and footer and is added to `sitemap.xml`. Then commit.
+
+On artist pages, file paths start with `../` (for example `../assets/photos/…`), because the pages are one folder down.
+
+## Adding photos
+
+- **Main artist image:** upload the photo to `assets/photos/` (JPG, about 1200 px, under about 300 KB). On the artist page, change the `src` of `<img class="artist-page-img …">`, update `width`, `height` and `alt`, and remove the `logo` class so the photo fills the square. Do the same on the card in `artists.html` (`artist-photo`) and, if you like, on the home page (`feature-img`).
+- **Gallery:** each artist page has an empty `<section class="artist-gallery">` with an example in the comment above it. Add `<img>` tags inside it and the gallery appears automatically. It stays hidden while it's empty.
+- Always write a descriptive `alt`, for example `alt="Jasy performing at The New Classic, Toronto"`.
 
 ## Spotify players
 
-Each artist card has `data-spotify-artist="..."`, which holds the artist's 22-character Spotify ID.
-To find it in Spotify, open the artist page and choose **Share → Copy link to artist**. The ID is the part after `/artist/`.
-If the ID is empty, the player is hidden. **Both artists' IDs are set.**
+`data-spotify-artist="…"` holds the artist's 22-character Spotify ID. To find it in Spotify, open the artist page and choose Share → Copy link to artist; the ID is the part after `/artist/`. An empty ID hides the player.
+Players load only when a visitor clicks **Load Spotify player**, so the site makes no requests to Spotify until then.
 
-Players load only when a visitor clicks **Load Spotify player**. Until then, the site makes no requests to Spotify. That keeps the privacy notice accurate ("no cookies, no tracking").
+## Contact form (Web3Forms)
 
-## Adding an artist
+1. Get a free access key at <https://web3forms.com> using **management@ljprecords.ca**. Submissions are emailed there.
+2. In `contact.html`, replace `PASTE_KEY_HERE` in `<input type="hidden" name="access_key" …>` with your key. Until you do, the form shows a message asking visitors to email you instead.
+3. Test it once from the live site.
 
-Copy one whole `<article class="artist-card">…</article>` block inside `.artist-grid`, then change the name, the `id`/`aria-labelledby` values, the text, the links and the Spotify ID.
+How it works:
+- **Fields:** name, email, artist/project, role and message are required, plus the privacy consent checkbox. The **news checkbox is optional and unticked by default**, as Canada's anti-spam law (CASL) requires. Its value arrives in the email as `news_opt_in: Yes` or `No`. Only add people who ticked it to a mailing list.
+- **Spam protection:** a hidden honeypot checkbox (`botcheck`) that bots tick and people never see. Web3Forms rejects those submissions.
+- **Without JavaScript,** the form still posts directly to Web3Forms, and the email address is always shown next to the form.
 
-## Decisions I made (no questions asked)
+## Decisions I made
 
-- **No Google Fonts or external requests.** Headings use the Bodoni and Didot system fonts, which are close to the logo's typeface, with serif fallbacks. Body text uses the system sans-serif. Loading Google Fonts sends visitors' IP addresses to Google, which would contradict a "no tracking" privacy notice.
-- **Click-to-load Spotify embeds** use Spotify's official `open.spotify.com/embed/artist/…` player, for the same privacy reason.
-- **Artist images:** the cards show each artist's logo, supplied by you (`assets/photos/jasy-logo.png`, `assets/photos/hollowsound-logo.jpg`). Nothing is hotlinked.
-- **Logo:** the supplied logo was converted to a transparent gold PNG (`logo.png`) so it sits cleanly on the dark background. The favicon uses the LJP monogram only, because the full logo is unreadable at 16–32 px.
-- **Label social links** aren't known, so the footer links to the artists' Instagram pages. Add the label's own accounts when you have them.
-- **Structured data:** `index.html` includes schema.org `Organization` data (legal name, email, city) to help search engines and verifiers identify the business.
-- **The Jasy bio** was written only from public sources: Apple Music, Modern Mississauga, Sauga Arts HUB, The Music Is My Radar and Deezer. **The Hollowsound bio** comes from the band's Spotify bio and hollow-sound.com. Neither includes streaming numbers.
+- **Shared header and footer** use committed HTML plus an optional Python sync script, not JavaScript includes. Pages work for every visitor and search engine, and there's still no build step on GitHub.
+- **Relative links** (`./`, `../`) so the site works on both `ljprecords.ca` and the `github.io` preview address. `404.html` uses root links (`/…`) because GitHub serves it at any address.
+- **No Google Fonts or other external requests.** Headings use the Bodoni and Didot system fonts, which are close to the logo's typeface, with serif fallbacks. That keeps the "no tracking" statement in the Privacy Policy true.
+- **Mobile menu:** a menu button on small screens. Without JavaScript, the links are simply always shown.
+- **Structured data (schema.org):** `Organization` with legal name, Ontario Corporation Number, email and city, plus `WebSite`, on the home page. There's `AboutPage` on About, `MusicGroup` on each artist page, and Elsewhere Audio is marked up as a sub-organization.
+- **Artist bios** come only from public sources and the artists' own profiles, with no streaming numbers.
 
 ## Hosting setup (one-time)
 

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Work with us | Contact LJP Records</title>
+  <meta name="description" content="Contact LJP Records Inc. in Mississauga, Ontario. Artists, producers, composers and media or business enquiries: send us your music or tell us about your project.">
+  <!-- BEGIN:head -->
+  <meta name="theme-color" content="#0a0a0a">
+  <link rel="canonical" href="https://ljprecords.ca/contact.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="LJP Records">
+  <meta property="og:title" content="Work with us | Contact LJP Records">
+  <meta property="og:description" content="Contact LJP Records Inc. in Mississauga, Ontario. Artists, producers, composers and media or business enquiries: send us your music or tell us about your project.">
+  <meta property="og:url" content="https://ljprecords.ca/contact.html">
+  <meta property="og:image" content="https://ljprecords.ca/assets/img/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="LJP Records logo: gold LJP monogram in a square frame on black">
+  <meta property="og:locale" content="en_CA">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="./favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/img/icon-32.png">
+  <link rel="apple-touch-icon" href="./assets/img/icon-180.png">
+  <link rel="manifest" href="./site.webmanifest">
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <script>document.documentElement.classList.add('js');</script>
+  <!-- END:head -->
+</head>
+<body data-page="contact">
+  <!-- BEGIN:header -->
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <nav class="nav container" aria-label="Main">
+      <a class="nav-brand" href="./" aria-label="LJP Records home">
+        <img src="./assets/img/mark.png" alt="" width="28" height="32">
+        <span>LJP Records</span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links">
+        <span class="nav-toggle-bars" aria-hidden="true"></span>
+        <span class="visually-hidden">Menu</span>
+      </button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="./">Home</a></li>
+        <li><a href="./artists.html">Artists</a></li>
+        <li><a href="./services.html">Services</a></li>
+        <li><a href="./elsewhere-audio.html">Elsewhere Audio</a></li>
+        <li><a href="./about.html">About</a></li>
+        <li><a href="./contact.html" aria-current="page" class="nav-cta">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <!-- END:header -->
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="container narrow">
+        <p class="eyebrow">Contact</p>
+        <h1>Work with us</h1>
+        <p class="lead">Artists, producers, composers, and media or business enquiries: tell us about yourself and send a link to your music.</p>
+      </div>
+    </section>
+
+    <section class="section section-tight">
+      <div class="container contact-layout">
+        <div class="contact-form-wrap">
+          <!--
+            Web3Forms: replace PASTE_KEY_HERE below with your access key from https://web3forms.com
+            (it's created for management@ljprecords.ca). Submissions are emailed to that address.
+          -->
+          <form class="contact-form" id="contact-form" action="https://api.web3forms.com/submit" method="POST" novalidate>
+            <input type="hidden" name="access_key" value="PASTE_KEY_HERE">
+            <input type="hidden" name="subject" value="New enquiry from ljprecords.ca">
+            <input type="hidden" name="from_name" value="ljprecords.ca contact form">
+            <!-- Honeypot: real people never see or tick this; bots that do are rejected by Web3Forms. -->
+            <div class="hp" aria-hidden="true">
+              <label>Leave this box unticked <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off"></label>
+            </div>
+
+            <p class="form-note">Fields marked <span class="req" aria-hidden="true">*</span><span class="visually-hidden">with an asterisk</span> are required.</p>
+
+            <div class="field">
+              <label for="f-name">Name <span class="req" aria-hidden="true">*</span></label>
+              <input id="f-name" name="name" type="text" autocomplete="name" required maxlength="120">
+            </div>
+            <div class="field">
+              <label for="f-email">Email <span class="req" aria-hidden="true">*</span></label>
+              <input id="f-email" name="email" type="email" autocomplete="email" required maxlength="200">
+            </div>
+            <div class="field">
+              <label for="f-project">Artist / project name</label>
+              <input id="f-project" name="artist_or_project" type="text" maxlength="160">
+            </div>
+            <div class="field">
+              <label for="f-role">I am a… <span class="req" aria-hidden="true">*</span></label>
+              <select id="f-role" name="i_am_a" required>
+                <option value="">Choose one</option>
+                <option>Artist</option>
+                <option>Producer</option>
+                <option>Composer</option>
+                <option>Media/business enquiry</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="f-links">Links to your music</label>
+              <textarea id="f-links" name="music_links" rows="2" maxlength="1000" aria-describedby="f-links-hint"></textarea>
+              <p class="hint" id="f-links-hint">Spotify, SoundCloud, YouTube, Dropbox, etc. Please send links, not attachments.</p>
+            </div>
+            <div class="field">
+              <label for="f-message">Message <span class="req" aria-hidden="true">*</span></label>
+              <textarea id="f-message" name="message" rows="6" required maxlength="5000"></textarea>
+            </div>
+
+            <div class="field check">
+              <input id="f-consent" name="privacy_consent" type="checkbox" value="Yes" required>
+              <label for="f-consent">I agree that LJP Records Inc. may use the details I've sent to reply to my enquiry, as described in the <a href="privacy.html">Privacy Policy</a>. <span class="req" aria-hidden="true">*</span></label>
+            </div>
+            <div class="field check">
+              <input id="f-news" name="news_opt_in" type="checkbox" value="Yes">
+              <label for="f-news">Send me occasional news from LJP Records and Elsewhere Audio. (Optional. You can unsubscribe at any time.)</label>
+            </div>
+
+            <button class="btn btn-gold" type="submit">Send message</button>
+            <p class="form-status" id="form-status" role="status" aria-live="polite" tabindex="-1"></p>
+          </form>
+          <noscript>
+            <p class="form-noscript">If the form doesn't work in your browser, email us at <a href="mailto:management@ljprecords.ca">management@ljprecords.ca</a>.</p>
+          </noscript>
+        </div>
+
+        <aside class="contact-aside" aria-labelledby="direct-title">
+          <h2 id="direct-title" class="small-heading">Prefer email?</h2>
+          <p class="contact-email-small"><a href="mailto:management@ljprecords.ca">management@ljprecords.ca</a></p>
+          <address class="contact-address">
+            LJP Records Inc.<br>
+            Mississauga, Ontario, Canada
+          </address>
+          <p class="muted small">We reply to every enquiry we can, but can't always respond to every demo submission.</p>
+          <!-- CONFIRM: Reply expectations. Edit the line above (e.g. "We aim to reply within X business days"). -->
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <!-- BEGIN:footer -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-col footer-company">
+        <a class="nav-brand" href="./" aria-label="LJP Records home">
+          <img src="./assets/img/mark.png" alt="" width="28" height="32">
+          <span>LJP Records</span>
+        </a>
+        <p>
+          LJP Records Inc.<br>
+          Ontario Corporation Number 1001399729<br>
+          Mississauga, Ontario, Canada<br>
+          <a href="mailto:management@ljprecords.ca">management@ljprecords.ca</a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <h2 class="footer-heading">Explore</h2>
+        <ul>
+          <li><a href="./artists.html">Artists</a></li>
+          <li><a href="./services.html">Services</a></li>
+          <li><a href="./elsewhere-audio.html">Elsewhere Audio</a></li>
+          <li><a href="./about.html">About</a></li>
+          <li><a href="./contact.html">Work with us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h2 class="footer-heading">Legal</h2>
+        <ul>
+          <li><a href="./privacy.html">Privacy</a></li>
+          <li><a href="./terms.html">Terms of Use</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h2 class="footer-heading">Follow</h2>
+        <!-- CONFIRM: Label social links. LJP Records' own accounts aren't known, so these link to the artists. Add the label's Instagram etc. in partials/footer.html, then run the sync script. -->
+        <ul>
+          <li><a href="https://www.instagram.com/jasylarumana/" rel="noopener" target="_blank">Jasy on Instagram<span class="visually-hidden"> (opens in a new tab)</span></a></li>
+          <li><a href="https://www.instagram.com/hollowsoundband/" rel="noopener" target="_blank">Hollowsound on Instagram<span class="visually-hidden"> (opens in a new tab)</span></a></li>
+          <li><a href="https://open.spotify.com/artist/3WVA0IDSVmQrOQ1MvbMLsJ" rel="noopener" target="_blank">Jasy on Spotify<span class="visually-hidden"> (opens in a new tab)</span></a></li>
+          <li><a href="https://open.spotify.com/artist/32NcEduA1WUu1zl0mmGaZf" rel="noopener" target="_blank">Hollowsound on Spotify<span class="visually-hidden"> (opens in a new tab)</span></a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="container legal">© 2026 LJP Records Inc. · Ontario Corporation Number 1001399729 · Mississauga, Ontario, Canada</p>
+  </footer>
+  <script src="./assets/js/main.js" defer></script>
+  <!-- END:footer -->
+</body>
+</html>
