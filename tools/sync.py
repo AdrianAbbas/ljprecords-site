@@ -6,7 +6,7 @@ Run from the repo root after editing anything in partials/:
 
 Each page needs these markers (already present in every page):
     <body data-page="artists">            which nav link to highlight (home, artists, services,
-                                           elsewhere, about, contact, or none)
+                                           windward, about, contact, or none)
     <!-- BEGIN:head --><!-- END:head -->   inside <head>, after <title> and <meta name="description">
     <!-- BEGIN:header --><!-- END:header --> at the top of <body>
     <!-- BEGIN:footer --><!-- END:footer --> at the bottom of <body>
@@ -18,7 +18,7 @@ ROOT = pathlib.Path(__file__).resolve().parent.parent
 SITE = "https://ljprecords.ca/"
 PARTIALS = {n: (ROOT / "partials" / f"{n}.html").read_text().strip() for n in ("head", "header", "footer")}
 SKIP_DIRS = {"partials", "tools", ".git", "node_modules"}
-NAV_KEYS = ("home", "artists", "services", "elsewhere", "about", "contact")
+NAV_KEYS = ("home", "artists", "services", "windward", "about", "contact")
 
 
 def pages():

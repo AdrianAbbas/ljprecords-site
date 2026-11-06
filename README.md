@@ -7,11 +7,11 @@ It's plain HTML and CSS, hosted free on GitHub Pages, with no framework and no b
 
 | File | Page |
 |---|---|
-| `index.html` | Home: hero, intro, featured artists, what we do, Elsewhere Audio teaser, "Work with us" call to action |
+| `index.html` | Home: hero, intro, featured artists, what we do, Windward Audio teaser, "Work with us" call to action |
 | `artists.html` | Roster overview (one card per artist) |
 | `artists/jasy.html`, `artists/hollowsound.html` | Artist pages: bio, links, Spotify player, photos |
 | `services.html` | Services |
-| `elsewhere-audio.html` | Elsewhere Audio (coming soon) |
+| `windward-audio.html` | Windward Audio (coming soon) |
 | `about.html` | About the label, our approach, company details |
 | `contact.html` | "Work with us" contact form (Web3Forms) |
 | `privacy.html`, `terms.html` | Privacy Policy and Terms of Use |
@@ -94,7 +94,7 @@ How it works:
 - **Relative links** (`./`, `../`) so the site works on both `ljprecords.ca` and the `github.io` preview address. `404.html` uses root links (`/…`) because GitHub serves it at any address.
 - **No Google Fonts or other external requests.** Headings use the Bodoni and Didot system fonts, which are close to the logo's typeface, with serif fallbacks. That keeps the "no tracking" statement in the Privacy Policy true.
 - **Mobile menu:** a menu button on small screens. Without JavaScript, the links are simply always shown.
-- **Structured data (schema.org):** `Organization` with legal name, Ontario Corporation Number, email and city, plus `WebSite`, on the home page. There's `AboutPage` on About, `MusicGroup` on each artist page, and Elsewhere Audio is marked up as a sub-organization.
+- **Structured data (schema.org):** `Organization` with legal name, Ontario Corporation Number, email and city, plus `WebSite`, on the home page. There's `AboutPage` on About, `MusicGroup` on each artist page, and Windward Audio is marked up as a sub-organization.
 - **Artist bios** come only from public sources and the artists' own profiles, with no streaming numbers.
 
 ## Hosting setup (one-time)
